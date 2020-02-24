@@ -6,7 +6,7 @@ const router = Router();
 router.get('/', async (req, res) => {
     try{
         const entries = await LogEntry.find();
-        // LogEntry.find() does a query to all log entries in our database
+        // LogEntry.find() does a query to all log entries in
         res.json(entries);
     } catch (error) {
         next(error)

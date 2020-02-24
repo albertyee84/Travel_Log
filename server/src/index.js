@@ -13,8 +13,6 @@ const logs = require('./api/logs')
 
 require('dotenv').config();
 
-
-
 const app = express();
 
 mongoose.connect(process.env.DATABASE_URL, {
