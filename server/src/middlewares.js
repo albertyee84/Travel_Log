@@ -8,6 +8,7 @@ const notFound = (req, res, next) => {
 };
 
 const errorHandler = (error, req, res, next) => {
+    //error handling middleware, need 4 params otherwise
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
     res.status(statusCode)
     res.json({
@@ -19,5 +20,5 @@ const errorHandler = (error, req, res, next) => {
 
 module.exports = {
     notFound,
-    errorHandler
+    errorHandler,
 }

@@ -1,13 +1,12 @@
 var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+var { Schema } = mongoose;
 
 const requiredNumber = {
       type: Number,
       required: true,
   }
 
-var logEntrySchema = new Schema(
-  {
+var logEntrySchema = new Schema({
     title: {
       type: String,
       required: true
@@ -31,15 +30,13 @@ var logEntrySchema = new Schema(
         min: -180,
         max: 180,
     },
-    visitedDate: {
+    visitDate: {
       required: true,
       type: Date
     }
-  },
-  {
-    timestamps: true
-  }
-);
+  }, {
+    timestamps: true,
+  });
 
 const LogEntry = mongoose.model('LogEntry', logEntrySchema)
 

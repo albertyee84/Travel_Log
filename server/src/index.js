@@ -9,7 +9,7 @@ const middlewares = require('./middlewares');
 
 const mongoose = require('mongoose');
 
-const logs = require('../api/logs')
+const logs = require('./api/logs')
 
 require('dotenv').config();
 
@@ -37,11 +37,11 @@ app.get('/', (req, res) => {
     })
 })
 
-app.use('/api/logs', logs)
+app.use('/api/logs', logs);
 
 app.use(middlewares.notFound)
 
-//error handling middleware, need 4 params otherwise
+
 app.use(middlewares.errorHandler)
 
 const port = process.env.PORT || 1337;
